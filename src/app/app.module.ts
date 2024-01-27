@@ -1,11 +1,18 @@
+// Packages
 import { NgModule, isDevMode } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+// Components
 import { AppComponent } from './app.component';
+// Modules
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
+// Interceptors
+import { ApiInterceptor } from './core/interceptors/api.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,12 +20,14 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule,
+    HttpClientModule,
     StoreModule.forRoot({}),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: !isDevMode(),
-    }),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    AuthModule,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
   ],
 })
 export class AppModule {}

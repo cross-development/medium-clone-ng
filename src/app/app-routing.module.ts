@@ -1,6 +1,8 @@
+// Packages
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+// Components
 import { RegisterComponent } from './auth/components/register/register.component';
 
 const routes: Routes = [
