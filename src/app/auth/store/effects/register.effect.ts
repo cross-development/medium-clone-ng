@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
-
 // Store
 import {
   registerAction,
@@ -13,7 +12,7 @@ import {
 } from '../actions/register.action';
 // Services
 import { AuthService } from '../../services/auth.service';
-import { PersistenceService } from '../../../core/services/persistence.service';
+import { PersistenceService } from '../../../shared/services/persistence.service';
 // Types
 import { CurrentUserInterface } from '../../../shared/types/currentUser.interface';
 
@@ -38,11 +37,12 @@ export class RegisterEffect {
   });
 
   public redirectAfterSubmit$ = createEffect(
-    () =>
-      this.actions$.pipe(
+    () => {
+      return this.actions$.pipe(
         ofType(registerSuccessAction),
         tap(() => this.router.navigateByUrl('/')),
-      ),
+      );
+    },
     { dispatch: false },
   );
 

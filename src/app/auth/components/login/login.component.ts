@@ -3,13 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-
 // Store
-import {
-  isSubmittingSelector,
-  validationErrorsSelector,
-} from '../../store/selectors';
 import { loginAction } from '../../store/actions/login.action';
+import { isSubmittingSelector, validationErrorsSelector } from '../../store/selectors';
 // Types
 import { LoginRequestInterface } from '../../types/loginRequest.interface';
 import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface';
@@ -17,7 +13,7 @@ import { BackendErrorsInterface } from '../../../shared/types/backendErrors.inte
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   public form: FormGroup;
@@ -25,8 +21,8 @@ export class LoginComponent implements OnInit {
   public backendErrors$: Observable<BackendErrorsInterface | null>;
 
   constructor(
-    public readonly formBuilder: FormBuilder,
-    public readonly store: Store,
+    private readonly formBuilder: FormBuilder,
+    private readonly store: Store,
   ) {}
 
   public ngOnInit(): void {

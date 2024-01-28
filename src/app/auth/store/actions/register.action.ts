@@ -1,6 +1,5 @@
 // Packages
 import { createAction, props } from '@ngrx/store';
-
 // Store
 import { ActionTypes } from '../actionTypes';
 // Types
@@ -12,10 +11,7 @@ import { AuthActionFailureInterface } from '../../types/authActionFailure.interf
 export const registerAction = createAction<
   ActionTypes.REGISTER,
   AuthActionRequestInterface<RegisterRequestInterface>
->(
-  ActionTypes.REGISTER,
-  props<AuthActionRequestInterface<RegisterRequestInterface>>(),
-);
+>(ActionTypes.REGISTER, props<AuthActionRequestInterface<RegisterRequestInterface>>());
 
 export const registerSuccessAction = createAction<
   ActionTypes.REGISTER_SUCCESS,

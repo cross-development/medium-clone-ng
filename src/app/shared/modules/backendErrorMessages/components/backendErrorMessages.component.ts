@@ -1,6 +1,5 @@
 // Packages
 import { Component, Input, OnInit } from '@angular/core';
-
 // Types
 import { BackendErrorsInterface } from '../../../types/backendErrors.interface';
 

@@ -3,13 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-
 // Store
-import {
-  isSubmittingSelector,
-  validationErrorsSelector,
-} from '../../store/selectors';
 import { registerAction } from '../../store/actions/register.action';
+import { isSubmittingSelector, validationErrorsSelector } from '../../store/selectors';
 // Types
 import { RegisterRequestInterface } from '../../types/registerRequest.interface';
 import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface';

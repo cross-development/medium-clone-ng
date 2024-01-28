@@ -1,6 +1,5 @@
 // Packages
 import { createAction, props } from '@ngrx/store';
-
 // Store
 import { ActionTypes } from '../actionTypes';
 // Types
@@ -12,10 +11,7 @@ import { AuthActionFailureInterface } from '../../types/authActionFailure.interf
 export const loginAction = createAction<
   ActionTypes.LOGIN,
   AuthActionRequestInterface<LoginRequestInterface>
->(
-  ActionTypes.LOGIN,
-  props<AuthActionRequestInterface<LoginRequestInterface>>(),
-);
+>(ActionTypes.LOGIN, props<AuthActionRequestInterface<LoginRequestInterface>>());
 
 export const loginSuccessAction = createAction<
   ActionTypes.LOGIN_SUCCESS,
