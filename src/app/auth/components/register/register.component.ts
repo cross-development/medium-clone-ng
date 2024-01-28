@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     this.initializeValues();
   }
 
-  public initializeForm(): void {
+  private initializeForm(): void {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
       email: ['', Validators.required],
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  public initializeValues(): void {
+  private initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
   }

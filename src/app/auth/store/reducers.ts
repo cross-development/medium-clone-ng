@@ -7,13 +7,13 @@ import {
   registerFailureAction,
   registerSuccessAction,
 } from './actions/register.action';
-// Types
-import { AuthStateInterface } from '../types/authState.interface';
 import {
   loginAction,
   loginFailureAction,
   loginSuccessAction,
 } from './actions/login.action';
+// Types
+import { AuthStateInterface } from '../types/authState.interface';
 
 const initialState: AuthStateInterface = {
   isSubmitting: false,

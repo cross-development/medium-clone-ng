@@ -5,20 +5,24 @@ import { createAction, props } from '@ngrx/store';
 import { ActionTypes } from '../actionTypes';
 // Types
 import { RegisterRequestInterface } from '../../types/registerRequest.interface';
-import { CurrentUserInterface } from '../../../shared/types/currentUser.interface';
-import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface';
+import { AuthActionRequestInterface } from '../../types/authActionRequest.interface';
+import { AuthActionSuccessInterface } from '../../types/authActionSuccess.interface';
+import { AuthActionFailureInterface } from '../../types/authActionFailure.interface';
 
-export const registerAction = createAction(
+export const registerAction = createAction<
   ActionTypes.REGISTER,
-  props<{ request: RegisterRequestInterface }>(),
+  AuthActionRequestInterface<RegisterRequestInterface>
+>(
+  ActionTypes.REGISTER,
+  props<AuthActionRequestInterface<RegisterRequestInterface>>(),
 );
 
-export const registerSuccessAction = createAction(
+export const registerSuccessAction = createAction<
   ActionTypes.REGISTER_SUCCESS,
-  props<{ currentUser: CurrentUserInterface }>(),
-);
+  AuthActionSuccessInterface
+>(ActionTypes.REGISTER_SUCCESS, props<AuthActionSuccessInterface>());
 
-export const registerFailureAction = createAction(
+export const registerFailureAction = createAction<
   ActionTypes.REGISTER_FAILURE,
-  props<{ errors: BackendErrorsInterface }>(),
-);
+  AuthActionFailureInterface
+>(ActionTypes.REGISTER_FAILURE, props<AuthActionFailureInterface>());

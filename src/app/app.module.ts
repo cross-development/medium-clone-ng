@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 // Modules
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
+import { TopBarModule } from './shared/modules/topBar/topBar.module';
 // Interceptors
 import { ApiInterceptor } from './core/interceptors/api.interceptor';
 
@@ -25,6 +26,7 @@ import { ApiInterceptor } from './core/interceptors/api.interceptor';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     AuthModule,
+    TopBarModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },

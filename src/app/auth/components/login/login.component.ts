@@ -34,14 +34,14 @@ export class LoginComponent implements OnInit {
     this.initializeValues();
   }
 
-  public initializeForm(): void {
+  private initializeForm(): void {
     this.form = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
-  public initializeValues(): void {
+  private initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
   }
