@@ -15,6 +15,7 @@ import { TopBarModule } from './shared/modules/topBar/topBar.module';
 import { ApiInterceptor } from './shared/services/api.interceptor';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
 import { PersistenceService } from './shared/services/persistence.service';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { PersistenceService } from './shared/services/persistence.service';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     AuthModule,
     TopBarModule,
+    GlobalFeedModule,
   ],
   providers: [
     PersistenceService,
