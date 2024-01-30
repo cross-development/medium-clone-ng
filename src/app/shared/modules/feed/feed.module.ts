@@ -8,6 +8,9 @@ import { StoreModule } from '@ngrx/store';
 import { FeedComponent } from './components/feed/feed.component';
 // Services
 import { FeedService } from './services/feed.service';
+// Modules
+import { LoadingModule } from '../loading/loading.module';
+import { ErrorMessageModule } from '../errorMessage/errorMessage.module';
 // Store
 import { feedReducer } from './store/reducers';
 import { GetFeedEffect } from './store/effects/getFeed.effect';
@@ -18,6 +21,8 @@ import { GetFeedEffect } from './store/effects/getFeed.effect';
     RouterModule,
     StoreModule.forFeature('feed', feedReducer),
     EffectsModule.forFeature([GetFeedEffect]),
+    ErrorMessageModule,
+    LoadingModule,
   ],
   exports: [FeedComponent],
   declarations: [FeedComponent],
