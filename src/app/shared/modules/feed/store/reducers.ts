@@ -1,5 +1,6 @@
 // Packages
 import { createReducer, on } from '@ngrx/store';
+import { routerNavigatedAction } from '@ngrx/router-store';
 // Store
 import {
   getFeedAction,
@@ -40,4 +41,5 @@ export const feedReducer = createReducer(
       error: action.error,
     }),
   ),
+  on(routerNavigatedAction, (): FeedStateInterface => initialState),
 );

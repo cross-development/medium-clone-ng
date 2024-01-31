@@ -34,5 +34,10 @@
     </a>
   </div>
 
-  PAGINATION
+  <app-pagination
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+    [total]="(feed$ | async)?.articlesCount"
+  ></app-pagination>
 </div>
