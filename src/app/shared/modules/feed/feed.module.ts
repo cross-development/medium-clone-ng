@@ -10,6 +10,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { FeedService } from './services/feed.service';
 // Modules
 import { LoadingModule } from '../loading/loading.module';
+import { TagListModule } from '../tagList/tagList.module';
 import { PaginationModule } from '../pagination/pagination.module';
 import { ErrorMessageModule } from '../errorMessage/errorMessage.module';
 // Store
@@ -25,6 +26,7 @@ import { GetFeedEffect } from './store/effects/getFeed.effect';
     ErrorMessageModule,
     LoadingModule,
     PaginationModule,
+    TagListModule,
   ],
   exports: [FeedComponent],
   declarations: [FeedComponent],
