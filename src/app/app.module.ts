@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 // Modules
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
+import { TagFeedModule } from './tagFeed/tagFeed.module';
+import { YourFeedModule } from './yourFeed/yourFeed.module';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
 // Services
@@ -32,6 +34,8 @@ import { PersistenceService } from './shared/services/persistence.service';
     AuthModule,
     TopBarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
   ],
   providers: [
     PersistenceService,

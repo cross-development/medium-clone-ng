@@ -1,21 +1,21 @@
 // Packages
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import queryString from 'query-string';
 // Store
 import { getFeedAction } from '../../store/actions/getFeed.action';
+import { errorSelector, feedSelector, isLoadingSelector } from '../../store/selectors';
 // Types
 import { GetFeedResponseInterface } from '../../types/getFeedResponse.interface';
-import { errorSelector, feedSelector, isLoadingSelector } from '../../store/selectors';
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss'],
 })
-export class FeedComponent implements OnInit, OnDestroy {
+export class FeedComponent implements OnInit, OnChanges, OnDestroy {
   @Input('resourceUrl')
   public resourceUrlProps: string;
 
@@ -38,6 +38,19 @@ export class FeedComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.initializeValues();
     this.initializeListeners();
+  }
+
+  public ngOnChanges(changes: SimpleChanges): void {
+    const changedResourceUrl = changes['resourceUrlProps'];
+
+    const isFirstChange = changedResourceUrl.firstChange;
+    const isValueChanged = changedResourceUrl.currentValue !== changedResourceUrl.previousValue;
+
+    const isResourceUrlChanged = !isFirstChange && isValueChanged;
+
+    if (isResourceUrlChanged) {
+      this.fetchFeed();
+    }
   }
 
   public ngOnDestroy(): void {

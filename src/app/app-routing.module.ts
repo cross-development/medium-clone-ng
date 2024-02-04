@@ -4,12 +4,22 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 // Components
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
+import { TagFeedComponent } from './tagFeed/components/tagFeed/tagFeed.component';
+import { YourFeedComponent } from './yourFeed/components/yourFeed/yourFeed.component';
 import { GlobalFeedComponent } from './globalFeed/components/globalFeed/globalFeed.component';
 
 const routes: Routes = [
   {
     path: '',
     component: GlobalFeedComponent,
+  },
+  {
+    path: '/feed',
+    component: YourFeedComponent,
+  },
+  {
+    path: '/tags/:slug',
+    component: TagFeedComponent,
   },
   {
     path: 'register',
