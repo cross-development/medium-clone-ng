@@ -7,6 +7,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { TagFeedComponent } from './tagFeed/components/tagFeed/tagFeed.component';
 import { YourFeedComponent } from './yourFeed/components/yourFeed/yourFeed.component';
 import { GlobalFeedComponent } from './globalFeed/components/globalFeed/globalFeed.component';
+import { ArticleComponent } from './article/components/article/article.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: '/tags/:slug',
     component: TagFeedComponent,
+  },
+  {
+    path: '/articles/:slug',
+    component: ArticleComponent,
   },
   {
     path: 'register',
