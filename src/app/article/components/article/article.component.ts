@@ -6,6 +6,7 @@ import { Observable, Subscription, combineLatest, map } from 'rxjs';
 // Store
 import { currentUserSelector } from '../../../auth/store/selectors';
 import { getArticleAction } from '../../store/actions/getArticle.action';
+import { deleteArticleAction } from '../../store/actions/deleteArticle.action';
 import { articleSelector, errorSelector, isLoadingSelector } from '../../store/selectors';
 // Types
 import { ArticleInterface } from '../../../shared/types/article.interface';
@@ -39,6 +40,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.articleSubscription.unsubscribe();
+  }
+
+  public deleteArticle(): void {
+    this.store.dispatch(deleteArticleAction({ slug: this.slug }));
   }
 
   private fetchData(): void {
