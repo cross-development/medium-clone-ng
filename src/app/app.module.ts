@@ -16,6 +16,7 @@ import { ArticleModule } from './article/article.module';
 import { YourFeedModule } from './yourFeed/yourFeed.module';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
+import { CreateArticleModule } from './createArticle/createArticle.module';
 // Services
 import { ApiInterceptor } from './shared/services/api.interceptor';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
@@ -37,6 +38,7 @@ import { PersistenceService } from './shared/services/persistence.service';
     GlobalFeedModule,
     YourFeedModule,
     TagFeedModule,
+    CreateArticleModule,
     ArticleModule,
   ],
   providers: [
