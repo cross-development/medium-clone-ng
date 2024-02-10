@@ -9,6 +9,7 @@ import { YourFeedComponent } from './yourFeed/components/yourFeed/yourFeed.compo
 import { GlobalFeedComponent } from './globalFeed/components/globalFeed/globalFeed.component';
 import { ArticleComponent } from './article/components/article/article.component';
 import { CreateArticleComponent } from './createArticle/components/createArticle/createArticle.component';
+import { EditArticleComponent } from './editArticle/components/editArticle/editArticle.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: '/articles/:slug',
     component: ArticleComponent,
+  },
+  {
+    path: '/articles/:slug/edit',
+    component: EditArticleComponent,
   },
   {
     path: 'register',
