@@ -10,6 +10,7 @@ import { GlobalFeedComponent } from './globalFeed/components/globalFeed/globalFe
 import { ArticleComponent } from './article/components/article/article.component';
 import { CreateArticleComponent } from './createArticle/components/createArticle/createArticle.component';
 import { EditArticleComponent } from './editArticle/components/editArticle/editArticle.component';
+import { SettingsComponent } from './settings/components/settings/settings.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
   },
 ];
 

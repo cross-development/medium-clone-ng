@@ -7,6 +7,7 @@ import { AuthResponseInterface } from '../types/authResponse.interface';
 import { LoginRequestInterface } from '../types/loginRequest.interface';
 import { RegisterRequestInterface } from '../types/registerRequest.interface';
 import { CurrentUserInterface } from '../../shared/types/currentUser.interface';
+import { CurrentUserInputInterface } from '../../shared/types/currentUserInput.interface';
 
 @Injectable()
 export class AuthService {
@@ -26,5 +27,11 @@ export class AuthService {
 
   public getCurrentUser(): Observable<CurrentUserInterface> {
     return this.http.get('/user').pipe(map(this.getUser));
+  }
+
+  public updateCurrentUser(
+    currentUserInput: CurrentUserInputInterface,
+  ): Observable<CurrentUserInterface> {
+    return this.http.put('/user', currentUserInput).pipe(map(this.getUser));
   }
 }

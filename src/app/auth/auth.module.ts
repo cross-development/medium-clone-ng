@@ -18,6 +18,7 @@ import { authReducer } from './store/reducers';
 import { LoginEffect } from './store/effects/login.effect';
 import { RegisterEffect } from './store/effects/register.effect';
 import { GetCurrentUserEffect } from './store/effects/getCurrentUser.effect';
+import { UpdateCurrentUserEffect } from './store/effects/updateCurrentUser.effect';
 
 @NgModule({
   imports: [
@@ -25,7 +26,12 @@ import { GetCurrentUserEffect } from './store/effects/getCurrentUser.effect';
     RouterModule,
     ReactiveFormsModule,
     StoreModule.forFeature('auth', authReducer),
-    EffectsModule.forFeature([LoginEffect, RegisterEffect, GetCurrentUserEffect]),
+    EffectsModule.forFeature([
+      LoginEffect,
+      RegisterEffect,
+      GetCurrentUserEffect,
+      UpdateCurrentUserEffect,
+    ]),
     BackendErrorMessagesModule,
   ],
   declarations: [RegisterComponent, LoginComponent],
