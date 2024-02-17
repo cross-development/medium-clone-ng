@@ -12,6 +12,7 @@ import {
   getCurrentUserFailureAction,
   getCurrentUserSuccessAction,
 } from './actions/getCurrentUser.action';
+import { logoutAction } from './actions/sync.actions';
 import { updateCurrentUserSuccessAction } from './actions/updateCurrentUser.action';
 // Types
 import { AuthStateInterface } from '../types/authState.interface';
@@ -109,6 +110,13 @@ export const authReducer = createReducer(
     (state, action): AuthStateInterface => ({
       ...state,
       currentUser: action.currentUser,
+    }),
+  ),
+  on(
+    logoutAction,
+    (): AuthStateInterface => ({
+      ...initialState,
+      isLoggedIn: false,
     }),
   ),
 );

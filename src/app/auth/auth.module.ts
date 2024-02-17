@@ -19,6 +19,7 @@ import { LoginEffect } from './store/effects/login.effect';
 import { RegisterEffect } from './store/effects/register.effect';
 import { GetCurrentUserEffect } from './store/effects/getCurrentUser.effect';
 import { UpdateCurrentUserEffect } from './store/effects/updateCurrentUser.effect';
+import { LogoutEffect } from './store/effects/logout.effect';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { UpdateCurrentUserEffect } from './store/effects/updateCurrentUser.effec
       RegisterEffect,
       GetCurrentUserEffect,
       UpdateCurrentUserEffect,
+      LogoutEffect,
     ]),
     BackendErrorMessagesModule,
   ],

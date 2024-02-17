@@ -18,23 +18,23 @@ const routes: Routes = [
     component: GlobalFeedComponent,
   },
   {
-    path: '/feed',
+    path: 'feed',
     component: YourFeedComponent,
   },
   {
-    path: '/tags/:slug',
+    path: 'tags/:slug',
     component: TagFeedComponent,
   },
   {
-    path: '/articles/new',
+    path: 'articles/new',
     component: CreateArticleComponent,
   },
   {
-    path: '/articles/:slug',
+    path: 'articles/:slug',
     component: ArticleComponent,
   },
   {
-    path: '/articles/:slug/edit',
+    path: 'articles/:slug/edit',
     component: EditArticleComponent,
   },
   {
