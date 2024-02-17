@@ -20,7 +20,13 @@
         <span class="date">{{ article.createdAt | date }}</span>
       </div>
 
-      <div class="pull-xs-right">ADD TO FAVORITES</div>
+      <div class="pull-xs-right">
+        <app-add-to-favorites
+          [articleSlug]="article.slug"
+          [isFavorited]="article.favorited"
+          [favoritesCount]="article.favoritesCount"
+        ></app-add-to-favorites>
+      </div>
     </div>
 
     <a

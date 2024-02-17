@@ -13,6 +13,7 @@ import { LoadingModule } from '../loading/loading.module';
 import { TagListModule } from '../tagList/tagList.module';
 import { PaginationModule } from '../pagination/pagination.module';
 import { ErrorMessageModule } from '../errorMessage/errorMessage.module';
+import { AddToFavoritesModule } from '../addToFavorites/addToFavorites.module';
 // Store
 import { feedReducer } from './store/reducers';
 import { GetFeedEffect } from './store/effects/getFeed.effect';
@@ -27,6 +28,7 @@ import { GetFeedEffect } from './store/effects/getFeed.effect';
     LoadingModule,
     PaginationModule,
     TagListModule,
+    AddToFavoritesModule,
   ],
   exports: [FeedComponent],
   declarations: [FeedComponent],

@@ -8,8 +8,8 @@ export interface ArticleInterface {
   body: string;
   slug: string;
   tagList: string[];
-  favorite: boolean;
-  favoriteCount: number;
+  favorited: boolean;
+  favoritesCount: number;
   createdAt: string;
   updatedAt: string;
 }
