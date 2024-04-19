@@ -9,7 +9,6 @@ import { PopularTagsComponent } from './components/popularTags/popularTags.compo
 // Services
 import { PopularTagsService } from './services/popularTags.service';
 // Modules
-import { LoadingModule } from '../loading/loading.module';
 import { ErrorMessageModule } from '../errorMessage/errorMessage.module';
 // Store
 import { popularTagsReducer } from './store/reducers';
@@ -22,7 +21,6 @@ import { GetPopularTagsEffect } from './store/effects/getPopularTags.effect';
     StoreModule.forFeature('popularTags', popularTagsReducer),
     EffectsModule.forFeature([GetPopularTagsEffect]),
     ErrorMessageModule,
-    LoadingModule,
   ],
   exports: [PopularTagsComponent],
   declarations: [PopularTagsComponent],

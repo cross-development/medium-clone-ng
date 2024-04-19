@@ -7,6 +7,8 @@
           [backendErrors]="errorProps"
         ></app-backend-error-messages>
 
+        <h1 class="text-sx-center">New post</h1>
+
         <form
           [formGroup]="form"
           (ngSubmit)="onSubmit()"
@@ -35,7 +37,7 @@
                 rows="8"
                 placeholder="Write your article (in markdown)"
                 formControlName="body"
-                class="form-control form-control-lg"
+                class="form-control form-control-lg article-body"
               ></textarea>
             </fieldset>
 

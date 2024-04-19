@@ -1,5 +1,16 @@
 <div class="feed-toggle">
   <ul class="nav nav-pills outline-active">
+    <li class="nav-item">
+      <a
+        [routerLink]="['/']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+      >
+        Global feed
+      </a>
+    </li>
+
     <li
       *ngIf="isLoggedIn$ | async"
       class="nav-item"
@@ -10,17 +21,6 @@
         class="nav-link"
       >
         Your feed
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a
-        [routerLink]="['/']"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="nav-link"
-      >
-        Global feed
       </a>
     </li>
 

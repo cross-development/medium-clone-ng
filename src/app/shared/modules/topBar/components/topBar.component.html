@@ -3,16 +3,18 @@
     <a
       [routerLink]="['/']"
       class="navbar-brand"
-      >Medium Clone</a
     >
+      Medium Clone
+    </a>
 
     <ul class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
         <a
           [routerLink]="['/']"
           class="nav-link"
-          >Home</a
         >
+          Home
+        </a>
       </li>
 
       <ng-container *ngIf="isLoggedIn$ | async">
@@ -36,7 +38,7 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item user-menu">
           <a
             [routerLink]="['/profiles', (currentUser$ | async).username]"
             class="nav-link"
@@ -55,16 +57,18 @@
           <a
             [routerLink]="['/login']"
             class="nav-link"
-            >Sign In</a
           >
+            Sign In
+          </a>
         </li>
 
         <li class="nav-item">
           <a
             [routerLink]="['/register']"
             class="nav-link"
-            >Sign Up</a
           >
+            Sign Up
+          </a>
         </li>
       </ng-container>
     </ul>
